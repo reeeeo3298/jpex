@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','JpexController@index');
+
+Route::get('/spot_data','JpexController@spot_data');
