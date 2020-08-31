@@ -21,6 +21,20 @@ class JpexController extends Controller
         return view('main.index');
     }
     
+    /**
+     * 
+     * シミュレーション画面表示
+     */
+    public function calc(){
+        
+//        $results = DB::table('t_data')
+//                    ->get();
+        
+//        dd($results);
+        
+        return view('calc.index');
+    }
+    
     public function spot_data(Request $request){
         
         $date = $request->input('day');
