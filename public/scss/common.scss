@@ -222,6 +222,17 @@ body{
                     }
                 }
             }
+            .supply_txt{
+                    width: 80%;
+                    margin: 0 auto;
+                    border: solid 2px;
+                    border-color: red;
+                p{
+                    margin-top: 0!important;
+                    color: red;
+                    font-weight: bold;
+                }
+            }
         }
         #jepx_feature{
             text-align: center;

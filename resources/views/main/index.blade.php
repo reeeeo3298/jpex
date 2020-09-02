@@ -24,31 +24,31 @@
             <div class="header-content">
                 <div class="header-main">
                     <div class="logo">
-                        <a href="/">
+                        <a href="https://lpio.jp/">
                             <img src="public/images/logo.png">
                         </a>
                     </div>
                     <nav class="nav-menu">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <a href="/">でんきページ</a>
+                            <a href="https://lpio.jp/electrical/">でんきページ</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/">よくある質問</a>
+                            <a href="https://lpio.jp/faq/">よくある質問</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/">MYページ</a>
+                            <a href="https://portal.lpio.jp/Account/Login">MYページ</a>
                         </li>
                     </ul>
                     </nav>
                 </div>
                 <div class="header_main_sp">
-                    <h1><a href="/"><img src="public/images/logo.png"></a></h1>
+                    <h1><a href="https://lpio.jp/"><img src="public/images/logo.png"></a></h1>
                     <div id="nav">
                     <ul>
-                    <li><a href="#menu01">でんきページ</a></li>
-                    <li><a href="#menu02">よくある質問</a></li>
-                    <li><a href="#menu03">MYページ</a></li>
+                    <li><a href="https://lpio.jp/electrical/">でんきページ</a></li>
+                    <li><a href="https://lpio.jp/faq/">よくある質問</a></li>
+                    <li><a href="https://portal.lpio.jp/Account/Login">MYページ</a></li>
                     </ul>
                     </div>
                     <button class="menu"><span></span><span></span><span></span></button>
@@ -59,13 +59,13 @@
                         最近流行りの市場連動型プランとは具体的にどういうことなのか？
                         このページでは市場連動型料金プランについて詳しく解説します。
                     </p>
-                    <a href="https://enechange.jp/try/input?f=header-menu">料金シミュレーション</a>
+                    <a href="https://order.lpio.jp/new/">エルピオでんきお申込み</a>
                 </div>
             </div>
         </header>
         <div id="side_btn">
             <div class="item form_item">
-                <a href=""><span>でんき<br>お申込み</span></a>
+                <a href="https://order.lpio.jp/new/"><span>でんき<br>お申込み</span></a>
             </div>
             <div class="item simulation_item">
                 <a href="https://enechange.jp/try/input?f=header-menu"><span>でんき<br>料金計算</span></a>
@@ -74,6 +74,9 @@
         <article class="main_content">
                 
                 <section id="jepx_about"><!--市場連動プランとは-->
+                    <div class="supply_txt">
+                        <p>※供給開始は2020/10/1以降となります。</p>
+                    </div>
                     <h1><span>市場連動プランとは？</span></h1>
                     <p>
                        市場連動型プランとは、電気料金単価があらかじめ決まっているプランに対し、
@@ -82,7 +85,7 @@
                        市場の取引価格は需要に応じて30分毎に単価が変動する為、
                        市場価格が安い状態のときに電気を使うことができれば、
                        電気料金を抑えることが可能です。
-                    </p>
+                    </p> 
                     <div class="cp_banner">
                         <h3>市場連動プラン開始キャンペーン実施中！</h3>
                         <figure><a href="https://lpio.jp/lp/"><img src="public/images/cp_bnr.jpg"></a></figure>
@@ -450,8 +453,8 @@
                         <div class="content_block">
                             <p class="txt">
                             「電力仕入費用」は、市場連動価格の料金体系を採用しています。
-                            下記に表示のJEPXのエリアプライスのスポット価格（30分値）、手数料、消費税、
-                            電気を送る際に失う電気（送電ロス）を合計した金額となります。
+                            送電ロス分を加味したお客様のご使用量にJEPXのエリアプライスのスポット価格（30分値）を乗じた取引金額、
+                            市場取引手数料とそれら2つの消費税 を合計した金額となります。
                             </p>
                             <div class="spot_data_block">
                                 <div class="day_btn">
@@ -489,6 +492,7 @@
                                 <div class="spot-data">
                                     <div id="highcharts"></div>
                                 </div>
+                                <p class="spot_data_txt" style="text-align: left;">※上記グラフは2019/04/01以降のデータとなります。</p>
                                 <div class="nenryou">
                                     <p>
                                         <strong>※燃料調整費について</strong><br>
@@ -668,6 +672,47 @@
                                       <div class="qa">A.</div>
                                       <span class="qa_answer">「市場連動プラン」から他プランへの変更は1年に1度のみとなります。<br>
                                           また、切替日は基準検針日となります。</span>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li class="faq_list">
+                                <div class="lpio_menu">
+                                    <span class="qa">Q.</span>
+                                    <span class="qa_text">市場（=日本卸電力取引所 / JEPX）の取引価格はいつわかる？</span>
+                                    <span class="lpio_icon"></span>
+                                </div>
+                                <ul class="lpio_submenu">
+                                  <li>
+                                      <div class="qa">A.</div>
+                                      <span class="qa_answer">市場価格は対象日の前日に決定いたします。<br>
+                                          弊社ウェブサイトにて翌日分の日本卸電力取引所価格をご確認いただけますのでご参考くださいませ。</span>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li class="faq_list">
+                                <div class="lpio_menu">
+                                    <span class="qa">Q.</span>
+                                    <span class="qa_text">市場（=日本卸電力取引所 / JEPX）の価格は変動する？</span>
+                                    <span class="lpio_icon"></span>
+                                </div>
+                                <ul class="lpio_submenu">
+                                  <li>
+                                      <div class="qa">A.</div>
+                                      <span class="qa_answer">取引価格は天候や気温等様々な要因により30分毎、またエリア毎でも価格が変動します。</span>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li class="faq_list">
+                                <div class="lpio_menu">
+                                    <span class="qa">Q.</span>
+                                    <span class="qa_text">「送電ロス」とは何ですか？</span>
+                                    <span class="lpio_icon"></span>
+                                </div>
+                                <ul class="lpio_submenu">
+                                  <li>
+                                      <div class="qa">A.</div>
+                                      <span class="qa_answer">発電所からお客様のところまで電気を送る間には電気は送配電線等で一定量ロス(損失)します。<br>
+                                                弊社含む電力会社はロス分の電気を加算して発電所や電力卸市場から購入する必要があります。</span>
                                   </li>
                                 </ul>
                             </li>

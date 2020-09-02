@@ -183,6 +183,15 @@ body {
           width: 65% !important; }
           body .main_content #jepx_about .cp_banner .cp_txt .red {
             color: red; }
+      body .main_content #jepx_about .supply_txt {
+        width: 80%;
+        margin: 0 auto;
+        border: solid 2px;
+        border-color: red; }
+        body .main_content #jepx_about .supply_txt p {
+          margin-top: 0 !important;
+          color: red;
+          font-weight: bold; }
     body .main_content #jepx_feature {
       text-align: center;
       background-color: #F0F3F5;
