@@ -10,7 +10,7 @@ $(function(){
    
     var dt = new Date();
     var y = dt.getFullYear();
-    var m = ("00" + (dt.getMonth()-2)).slice(-2);
+    var m = ("00" + (dt.getMonth()+1)).slice(-2);
     var d = ("00" + dt.getDate()).slice(-2);
     var result = y + "/" + m + "/" + d;
     
@@ -39,10 +39,25 @@ $(function(){
     });
     
     /**
+     * 託送料金エリア変更時
+     */
+    $('.transmission_tabs_item').on('click',function(){
+        
+        console.log('SS');
+        
+        area_tbl_name = $(this).data('areaname');
+        $('.transmission_tabs_item').removeClass('active');
+        $(this).addClass('active'); 
+        $('.transmission_area_table').removeClass('active');
+        $('.'+area_tbl_name).addClass('active'); 
+    });
+    
+    /**
      * エリア変更時
      */
-    $('.tabs-item').on('click',function(){
-        $('.tabs-item').removeClass('active');
+    $('.tabs_item').on('click',function(){
+                        
+        $('.tabs_item').removeClass('active');
         $(this).addClass('active'); 
         area_cd = $(this).data('area');
         
@@ -131,6 +146,36 @@ $(function(){
   }
   
   /**
+   * よくある質問
+   */
+    $('.lpio_accordion li').click(function() {
+    $(this).children('.lpio_submenu').slideToggle();
+
+    if ($(this).children('.lpio_menu').hasClass('active')) {
+        $(this).children('.lpio_menu').removeClass('active');
+        $(this).children(".lpio_menu").css({
+          'background-color':'',
+          'color':''
+        });
+        $(this).find('span.qa').css('color','');
+        $(this).find('.lpio_icon').css('background-color','');
+        $(this).find('.lpio_icon').toggleClass('lpio_icon_active');
+     } else {
+        $(this).children(".lpio_menu").addClass("active");
+        $(this).children(".lpio_menu").css({
+          'background-color':'#42a4c9',
+          'color':'white'
+        });
+        $(this).find('span.qa').css('color','white');
+        $(this).find('.lpio_icon').css('background-color','white');
+        $(this).find('.lpio_icon').toggleClass('lpio_icon_active');
+        }
+
+    return false;
+  });
+
+  
+  /**
    * エリア名
    */
   function area(area_cd){
@@ -147,4 +192,48 @@ $(function(){
       return area_name;
   };
   
+  //マーカーアニメーション
+  $(window).scroll(function (){
+    $(".js-markerScrollAnimation").each(function(){
+      var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+      var scroll = $(window).scrollTop(); //スクロールの位置を取得
+      var windowHeight = $(window).height(); //ウインドウの高さを取得
+      if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
+        $(this).addClass('is-active'); //クラス「active」を与える
+      }
+    });
+    });
+    
+    
+  
 });
+
+$(function () {
+  $('.menu').on('click', function () {
+    $(this).toggleClass('active');
+    $("#nav").toggleClass('active');
+    
+        if($(".menu").hasClass('active')) {
+        $("body").css('overflow','hidden');
+      }else {
+        $("body").css('overflow','auto');
+      }
+  
+  });
+}); 
+$(function () {
+  $('#nav a').on('click', function () {
+    $('#nav').toggleClass('active');
+    $(".menu").toggleClass('active');
+  });
+});
+
+$(function(){
+    $(".footerSelectBtn").on("click", function() {
+            $(this).next().slideToggle();
+    });
+});
+
+$(function(){
+    
+})

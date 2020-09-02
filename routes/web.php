@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','JpexController@index');
+Route::get('/calc','JpexController@calc');
 
 Route::get('/spot_data','JpexController@spot_data');
