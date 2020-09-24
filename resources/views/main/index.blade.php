@@ -68,7 +68,7 @@
                 <a href="https://order.lpio.jp/new/"><span>でんき<br>お申込み</span></a>
             </div>
             <div class="item simulation_item">
-                <a href="https://enechange.jp/try/input?f=header-menu"><span>でんき<br>料金計算</span></a>
+                <a href="https://lpio.jp/jepx/calc"><span>でんき<br>料金計算</span></a>
             </div>
         </div>
         <article class="main_content">
