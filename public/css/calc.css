@@ -374,6 +374,8 @@ body {
           body .footer nav .footer-list .footer-item div dl dt a {
             color: #FFF; }
         body .footer nav .footer-list .footer-item div dl dd {
+          font-size: 11px;
+          margin-top: 10px;
           font-size: 11px; }
           body .footer nav .footer-list .footer-item div dl dd a {
             color: #FFF; }
