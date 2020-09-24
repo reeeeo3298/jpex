@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
         <link type="text/css" href="public/css/calc.css" rel="stylesheet">
+        <link type="text/css" href="public/css/calc_sp.css" rel="stylesheet" media="screen and (max-width: 1050px)">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
@@ -16,7 +17,7 @@
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <!--<script type="text/javascript" src="public/js/common.js"></script>-->
         <script type="text/javascript" src="public/js/calc.js"></script>
-        <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+        <!--<script src="https://code.highcharts.com/themes/dark-unica.js"></script>-->
     </head>
 
     <body>
@@ -31,16 +32,27 @@
                     <nav class="nav-menu">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <a href="/">料金プラン</a>
+                            <a href="https://lpio.jp/electrical/">でんきページ</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/">よくある質問</a>
+                            <a href="https://lpio.jp/faq/">よくある質問</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/">MYページ</a>
+                            <a href="https://portal.lpio.jp/Account/Login">MYページ</a>
                         </li>
                     </ul>
                     </nav>
+                </div>
+                <div class="header_main_sp">
+                    <h1><a href="https://lpio.jp/"><img src="public/images/logo.png"></a></h1>
+                    <div id="nav">
+                    <ul>
+                    <li><a href="https://lpio.jp/electrical/">でんきページ</a></li>
+                    <li><a href="https://lpio.jp/faq/">よくある質問</a></li>
+                    <li><a href="https://portal.lpio.jp/Account/Login">MYページ</a></li>
+                    </ul>
+                    </div>
+                    <button class="menu"><span></span><span></span><span></span></button>
                 </div>
             </div>
             <div class="header_txt">
@@ -63,6 +75,9 @@
                         電気ご使用量のお知らせ（検針票）をお手元にご用意いただき、
                         現在のご契約内容をご入力ください。
                     </h3>
+                    <p>
+                        ※本シミュレーションは、あくまで参考の目安値となり実際の金額をお約束するものではありません。
+                    </p>
                 </div>
                 <div class="calc_form">
                     <ul class="calc_list">
@@ -105,6 +120,7 @@
                             <h4 class="item_name"><span class="num">3</span>契約容量</h4>
                             <div class="form_item">
                                 <select name="elec_capacity_l">
+                                    <option value="6">6</option>
                                     <option value="7">7</option>
                                     <option value="8">8</option>
                                     <option value="9">9</option>
@@ -169,13 +185,13 @@
                                     <option value="12">12月</option>
                                 </select>
                             </div>
-                        </li>
+                        </li> 
                         <li class="calc_item" id="amount">
                             <h4 class="item_name"><span class="num">5</span>使用量</h4>
                             <div class="form_item">
                                 <input type="text" class="amount_txt" name="amount_txt"><span class="kwh"> kWh</span>
                                 <div class="month_list_block">
-                                    <p>月ごとの使用量(kWh)※1ヶ月の電気の使用量から地域ごとの仕様傾向に応じて推定</p>
+                                    <p>月ごとの使用量(kWh)※1ヶ月の電気の使用量から地域ごとの使用傾向に応じて推定</p>
                                     <div class="month_list">
                                         <div class="month_detail">
                                             <dl class="month_item">
@@ -234,7 +250,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="calc_item" id="lifestyle">
+<!--                        <li class="calc_item" id="lifestyle">
                             <h4 class="item_name"><span class="num">6</span>生活パターン</h4>
                             <div class="form_item">
                                 <div class="life_block">
@@ -244,7 +260,7 @@
                                     <label><input type="radio" name="lifepattern" value="03"><span>平日の日中も3人以上が家にいる</span></label>
                                 </div>
                             </div>
-                        </li>
+                        </li>-->
                     </ul>
                     <div class="calc_btn">
                         <p class="submit_btn">料金をシミュレーション</p>
@@ -253,7 +269,41 @@
                 </div>
             </section>
             <section id="result_block">
-                
+                <div class="section_inner">
+                    <div class="result_title">
+                        <h2>シミュレーション結果</h2>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_detail">
+                            <p>市場連動プラン<span id="plan_txt">S</span>にお切替えで</p>
+                            <p>年間<span id="price_txt">2000</span>円</p>
+                            <p>お得になります。</p>
+                        </div>
+                        <div class="result_data">
+                            <div id="container"></div>
+                        </div>
+                        <div class="result_table">
+                            <table id="month_table">
+                                <tbody>
+                                </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="calc_note">
+                <div class="section_inner">
+                    <h4>料金シミュレーション前提条件・注意点</h4>
+                    <ul>
+                        <li>本シミュレーションは、ご入力いただいた使用量、および当社が設定する独自の前提条件に
+                            もとづいて試算しております。試算結果は参考の目安値となり<span class="bold red">実際の金額をお約束するものではありません。</span></li>
+                        <li>エリア単価は2019年9月～2020年8月</span>の市場価格の月ごとの平均値を適用しています。</li>
+                        <li>再エネ賦課金は、2020年度の<span class="bold">2.98円/kWh</span>を適用しています。</li>
+                        <li>本シミュレーションの比較対象は、『地域電力会社の規制料金メニュー「従量電灯B・従量電灯C」関西・中国・四国エリアの場合「従量電灯A・従量電灯B」』です。</li>
+                        <li>地域電力会社以外との料金比較については、ご自身の請求金額と本シミュレーションの結果を比較してください。</li>
+                        <li>本シミュレーションではキャッシュバック金額は含まれておりません。</li>
+                    </ul>
+                </div>
             </section>
 
         </article>
@@ -262,63 +312,78 @@
             <nav>
                 <ul class="footer-list">
                     <li class="footer-item">
+                        <button class="footerSelectBtn">株式会社エルピオ</button>
                         <div>
                             <dl>
                                 <dt><a href="/">株式会社エルピオ</a></dt>
-                                <dd><a href="">特定商取引法に基づく表記</a></dd>
-                                <dd><a href="">サイトマップ</a></dd>
-                                <dd><a href="">プライバシーポリシー</a></dd>
-                                <dd><a href="">お問い合わせ</a></dd>
+                                <dd><a href="/news_list/">エルピオからのお知らせ一覧</a></dd>
+                                <dd><a href="/tokusho/">特定商取引法に基づく表記</a></dd>
+                                <dd><a href="/sitemap/">サイトマップ</a></dd>
+                                <dd><a href="/privacy/">プライバシーポリシー</a></dd>
+                                <dd><a href="/contact/">お問い合わせ</a></dd>
                             </dl>
                         </div>
                     </li>
                     <li class="footer-item">
+                        <button class="footerSelectBtn">エルピオガス</button>
                         <div>
                             <dl>
-                                <dt><a href="/">株式会社エルピオ</a></dt>
-                                <dd><a href="">特定商取引法に基づく表記</a></dd>
-                                <dd><a href="">サイトマップ</a></dd>
-                                <dd><a href="">プライバシーポリシー</a></dd>
-                                <dd><a href="">お問い合わせ</a></dd>
+                                <dt><a href="/gas/">エルピオガス</a></dt>
+                                <dd><a href="/gas/gasprice/">ガス料金</a></dd>
+                                <dd><a href="/gas/start/">ガスご利用の手続き</a></dd>
+                                <dd><a href="/gas/payment/">検針・お支払い</a></dd>
+                                <dd><a href="/gas/emergency/">もしもの時には</a></dd>
+                                <dd><a href="/gas/stop/">ガスが止まってしまったら</a></dd>
                             </dl>
                         </div>
                     </li>
                     <li class="footer-item">
+                        <button class="footerSelectBtn">エルピオでんき</button>
                         <div>
                             <dl>
-                                <dt><a href="/">株式会社エルピオ</a></dt>
-                                <dd><a href="">特定商取引法に基づく表記</a></dd>
-                                <dd><a href="">サイトマップ</a></dd>
-                                <dd><a href="">プライバシーポリシー</a></dd>
-                                <dd><a href="">お問い合わせ</a></dd>
+                                <dt><a href="/electrical/">エルピオでんき</a></dt>
+                                <dd><a href="/electrical/ele_tokyo/">東京電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_chubu/">中部電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_touhoku/">東北電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_kyushu/">九州電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_chugoku/">中国電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_kansai/">関西電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_shikoku/">四国電力エリアのお客様</a></dd>
+                                <dd><a href="/ele_hokuriku/">北陸電力エリアのお客様</a></dd>
+                                <dd><a href="/electrical/simulation/">料金シミュレーター</a></dd>
+                                <dd><a href="/electrical/lpioclub/">エルピオクラブ</a></dd>
                             </dl>
                         </div>
                     </li>
                     <li class="footer-item">
+                        <button class="footerSelectBtn">企業情報</button>
                         <div>
                             <dl>
-                                <dt><a href="/">株式会社エルピオ</a></dt>
-                                <dd><a href="">特定商取引法に基づく表記</a></dd>
-                                <dd><a href="">サイトマップ</a></dd>
-                                <dd><a href="">プライバシーポリシー</a></dd>
-                                <dd><a href="">お問い合わせ</a></dd>
+                                <dt><a href="/about/company/">企業情報</a></dt>
+                                <dd><a href="/about/message/">社長メッセージ</a></dd>
+                                <dd><a href="/about/company/">会社概要・沿革・組織図</a></dd>
+                                <dd><a href="/about/compliance/">企業の社会的責任</a></dd>
+                                <dd><a href="/about/staff/">スタッフ紹介</a></dd>
+                                <dd><a href="/about/anti/">反社会的勢力に対する方針</a></dd>
+                                <dd><a href="/about/access/">アクセスマップ</a></dd>
+                                <dd><a href="/about/agency/">代理店募集のお知らせ</a></dd>
                             </dl>
                         </div>
                     </li>
                     <li class="footer-item">
+                        <button class="footerSelectBtn">採用情報</button>
                         <div>
                             <dl>
-                                <dt><a href="/">株式会社エルピオ</a></dt>
-                                <dd><a href="">特定商取引法に基づく表記</a></dd>
-                                <dd><a href="">サイトマップ</a></dd>
-                                <dd><a href="">プライバシーポリシー</a></dd>
-                                <dd><a href="">お問い合わせ</a></dd>
+                                <dt><a href="https://recruit.lpio.jp">採用情報</a></dt>
+                                <dd><a href="https://recruit.lpio.jp/shinsotsu/">2020年度新卒採用情報</a></dd>
+                                <dd><a href="https://recruit.lpio.jp/chuto/">中途採用情報</a></dd>
+                                <dd><a href="https://recruit.lpio.jp/memberstory/y-s/">在籍中の社員の声</a></dd>
                             </dl>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <!--<small>© 2020 株式会社エルピオ LPIO CO., Ltd All Rights Reserved.</small>-->
+            <small>© 2020 株式会社エルピオ LPIO CO., Ltd All Rights Reserved.</small>
         </footer>
     </body>
 </html>

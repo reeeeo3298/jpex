@@ -233,7 +233,3 @@ $(function(){
             $(this).next().slideToggle();
     });
 });
-
-$(function(){
-    
-})

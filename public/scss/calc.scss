@@ -171,6 +171,13 @@ body{
                         width: 65%;
                         margin: 0 auto;
                     }
+                    p{
+                        font-size: 1.9rem;
+                        border: solid 2px #d43737;
+                        margin-top: 25px;
+                        color: #d43737;
+                        padding: 10px;
+                    }
                 }
                 .calc_form{
                     border: solid 2px;
@@ -303,9 +310,138 @@ body{
                         background-color: #efa63e;
                         color: white;
                         padding: 20px 0;
+                        cursor: pointer;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                         .submit_btn{
                             font-size: 3rem;
                             font-weight: bold;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+        #result_block{
+            display: none;
+            background-color: #eefaff;
+            margin-top: 150px;
+            .section_inner{
+                padding-top:35px;
+                padding-bottom: 45px;
+                .result_title{
+                    h2{
+                        text-align: center;
+                        font-size: 3.6rem;
+                        position: relative;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            bottom: -25px;
+                            left: 50%;
+                            margin-left: -40px;
+                            width: 80px;
+                            height: 3px;
+                            background-color: #222222;
+                        }
+                    }
+                }
+                .result_content{
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    background-color: white;
+                    padding: 30px;
+                    margin-top: 100px;
+                    .result_detail{
+                        text-align: center;
+                    }
+                    .result_detail {
+                        width: 60%;
+                        margin: 0 auto;
+                        box-shadow: aliceblue;
+                        box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.15)!important;
+                        padding: 30px;
+                        p{
+                            font-size: 2.5rem;
+                        }
+                        span#price_txt {
+                            font-size: 4.9rem;
+                            padding: 10px;
+                            color: #ae2f2f;
+                            font-weight: bold;
+                        }
+                    }
+                    .result_data {
+                        margin-top: 30px;
+                    }
+                }
+            }
+            .result_table{
+                margin-top: 25px;
+                table#month_table {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    border-collapse: collapse;
+                    border: 1px solid #ffffff;
+                    padding: 7px;
+                    background-color: #e3e3e3;
+                    td{
+                        border-collapse: collapse;
+                        border: 1px solid #ffffff;
+                        padding: 7px;
+                        background-color: #f5f5f5;
+                    }
+                    .month_color{
+                        background-color: #7aaec7 !important;
+                        color: white;
+                    }
+                    tbody{
+                        tr{
+                            &:first-child{
+                                td{
+                                    background-color: #7aaec7 !important;
+                                    color: white;
+                                }
+                            }
+                            &:nth-child(n+2){
+                                .lpio-price{
+                                    font-weight: bold;
+                                    color: #d12929;
+                                }
+                                .lpio-price.minus{
+                                    font-weight: bold;
+                                    color: #2b2b2b;
+                                }
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+        #calc_note{
+                max-width: 1000px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                margin-top: 30px;
+            .section_inner{
+                border: solid 1px;
+                border-color: #cdd6dd;
+                background-color: #ececec;
+                padding: 25px;
+                h4{
+                    font-weight: bold;
+                }
+                ul{
+                    li{
+                        line-height: 2;
+                        font-size: 1.7rem;
+                        .bold{
+                            font-weight: bold;
+                        }
+                        .red{
+                            color: red;
                         }
                     }
                 }
@@ -351,6 +487,9 @@ body{
                                 }
                             }
                         }
+                    }
+                    .footerSelectBtn{
+                        display: none;
                     }
                 }
             }
